@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Signup</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400|Lato:300, 500">
+    <link rel="stylesheet" href="assets/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/stylesheets/animate.min.css">
+    <link rel="stylesheet" href="assets/stylesheets/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row no-gutter">
+            <div class="signup centered">
+                <div class="signup-header text-center clearfix">
+                    <div class="header-logo">
+                        <img src="assets/imgs/logo.svg" class="animated bounceIn" alt="">
+                    </div> <!-- // div.header-logo -->
+                    <div class="header-title">
+                        <h4>Create new account</h4>
+                        <span>Enter your credentials below</span>
+                    </div> <!-- // div.header-title -->
+                </div> <!-- // div.signup-header -->
+                <div class="signup-form">
+                    <form id="signup-form" data-parsley-validate data-parsley-errors-messages-disabled>
+                        <div class="row">
+                            <div class="col-md-7 form-group">
+                                <label class="form-label" for="name">Full name</label>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Name and surname" required>
+                            </div>
+                            <div class="col-md-5 form-group">
+                                <label class="form-label" for="username">Username</label>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+                            </div> 
+                        </div> <!-- // div.row -->
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <label class="form-label" for="email">Email address</label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email address" required>
+                            </div>
+                        </div> <!-- // div.row -->
+                        <div class="row">
+                            <div class="col-md-7 form-group">
+                                <label class="form-label" for="country">Country</label>
+                                <input type="text" class="form-control" name="country" id="country" placeholder="Country" required>
+                            </div>
+                            <div class="col-md-5 form-group">
+                                <label class="form-label" for="city">City</label>
+                                <input type="text" class="form-control" name="city" id="city" placeholder="City" required>
+                            </div>
+                        </div> <!-- // div.row -->
+                        <div class="row">
+                            <div class="col-md-12 form-group password">
+                                <label class="form-label" for="password">Password</label>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                                <input type="password" class="form-control" name="rpassword" id="rpassword" placeholder="Repeat password" required data-parsley-equalto="#password">
+                            </div>
+                        </div> <!-- // div.row -->
+                        <div class="row">
+                            <div class="col-md-7">
+                                <label class="checkbox"><input type="checkbox" name="terms" id="terms" required><i></i> I accept the <a href="#">Terms & Conditions</a></label>
+                            </div>
+                            <div class="col-md-5 col-button">
+                                <button type="submit" class="btn form-button centered">Create account</button>
+                            </div>
+                        </div> <!-- // div.row -->
+                    </form> <!-- // form#signup-form -->
+                </div> <!-- // div.signup-form -->
+                <div class="signin text-center visible-sm visible-xs">
+                    Have account already? <a href="#">Sign in</a>
+                </div> <!-- // div.signin -->
+            </div> <!-- // div.signup -->
+        </div> <!-- // div.row -->
+        <div class="row">
+            <div class="signin text-center visible-lg visible-md ">
+                Have account already? <a href="#">Sign in</a>
+            </div> <!-- // div.signin -->
+        </div> <!-- // div.row -->
+	</div> <!-- // div.container -->
+    <script src="assets/javascript/plugins.min.js"></script>
+    <script src="assets/javascript/main.min.js"></script>
+</body>
+</html>
