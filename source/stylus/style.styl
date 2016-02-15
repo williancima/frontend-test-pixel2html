@@ -1,0 +1,243 @@
+body-background = #f4f5f5
+signup-background = #ffffff
+signup-border-color = #d4d8df
+main-color = #0f0f0f
+secondary-color = #8890a4
+link-color = #389bff
+header-border-color = #e6e9ed
+placeholder-color = #cdd0d4
+field-border-color = #e6e9ed
+field-border-color-active = #d9dadc
+field-background-active = #fcfcfc
+button-background = #67c60b
+button-background-hover = #5aae0a
+parsley-border-color = #dc2525
+parsley-placeholder-color = #c55d5e
+
+border-radius(args)
+    -webkit-border-radius: args
+    -moz-border-radius: args
+    -ms-border-radius: args
+    border-radius: args
+
+box-shadow(args)
+	-webkit-box-shadow: args
+	-moz-box-shadow: args
+	-ms-box-shadow: args
+	box-shadow: args
+
+transition(args)
+	-webkit-transition: args
+	-moz-transition: args
+	-ms-transition: args
+	transition: args
+
+body
+	background-color: body-background
+	color: secondary-color
+	font-family: "Lato", sans-serif
+	font-size: 16px
+	font-weight: 300
+
+a, a:active, a:hover, a:focus
+	color: link-color
+
+.centered
+    margin: 0px auto
+
+.no-gutter
+	margin: 0
+
+.signup
+	background-color: signup-background
+	position: relative
+
+	.signup-header
+		border-bottom: 1px solid header-border-color
+		padding: 20px
+
+		.header-logo
+			float: left
+			img
+				width: 50px
+
+		.header-title
+			h4
+				font-family: "Montserrat", sans-serif
+				color: main-color
+				margin-top: 15px
+				margin-bottom: 5px
+
+	.signup-form
+		margin: 30px 20px 35px 20px
+
+		.form-label
+			font-family: "Montserrat", sans-serif
+			font-size: 15px
+			font-weight: 400
+			color: main-color
+			margin-bottom: 12px
+
+		.form-control
+			font-size: 16px
+			border-color: field-border-color
+			border-radius(3px)
+			box-shadow(none)
+			height: 46px
+			padding: 10px 15px
+			&::-webkit-input-placeholder
+				color: placeholder-color
+			&:-moz-placeholder
+				color: placeholder-color
+			&::-moz-placeholder
+				color: placeholder-color
+			&:-ms-input-placeholder
+				color: placeholder-color
+
+			&:focus
+				background-color: field-background-active
+				border-color: field-border-color-active
+				box-shadow(none)
+
+		.checkbox
+			color: secondary-color
+			cursor: pointer
+			font-weight: 300
+			line-height: 27px
+			margin-top: 0
+			margin-bottom: 36px
+			padding-left: 32px
+
+			&.parsley-error
+				i
+					border-color: parsley-border-color
+				input:checked
+					+ i
+						border-color: field-border-color
+
+			input
+				left: -9999px
+				position: absolute
+
+			i
+				border: 1px solid field-border-color
+				border-radius(3px)
+				background: #fff
+				display: block
+				height: 17px
+				left: 0
+				outline: none
+				position: absolute
+				top: 5px
+				width: 17px
+
+			input + i:after
+				content: ''
+				top: 4px
+				left: 3px
+				z-index: 2
+				width: 10px
+				height: 5px
+				border-color: secondary-color
+				border-style: solid
+				border-width: 0 0 1px 1px
+				-webkit-transform: rotate(-45deg)
+				-ms-transform: rotate(-45deg)
+				transform: rotate(-45deg)
+				position: absolute
+				opacity: 0
+				transition(opacity 0.1s)
+
+			input:checked 
+				+ i
+					background: #fbfbfd!important
+
+					&:after
+						opacity: 1
+
+		.password
+			margin-bottom: 36px
+			.form-control
+				&:nth-last-child(2)
+					&:focus
+						z-index: 2
+						position: relative
+					border-radius(3px 3px 0 0)
+					margin-bottom: -1px
+
+				&:nth-last-child(1)
+					border-radius(0 0 3px 3px)
+
+		.form-button
+			background-color: button-background
+			border: 0
+			color: #fff
+			display: block
+			font-family: "Montserrat", sans-serif
+			font-size: 15px
+			font-weight: 400
+			letter-spacing: 0.01em
+			outline: none
+			padding: 0
+			transition(background-color 0.25s ease-out)
+			height: 48px
+			width: 225px
+			&:hover
+				background-color: button-background-hover
+			&:active
+				box-shadow(none)
+
+		.parsley-error
+			.form-control
+				border-color: parsley-border-color
+				&::-webkit-input-placeholder
+					color: parsley-placeholder-color
+				&:-moz-placeholder
+					color: parsley-placeholder-color
+				&::-moz-placeholder
+					color: parsley-placeholder-color
+				&:-ms-input-placeholder
+					color: parsley-placeholder-color
+
+.signin
+	padding-bottom: 35px
+	display: none
+
+@media (min-width: 992px)
+	.signup
+		border: 1px solid signup-border-color
+		border-radius(6px)
+		box-shadow(0 2px 5px rgba(235,236,236, 0.45))
+		max-width: 720px
+		margin-top: 35px
+
+		.signup-header
+			padding: 38px 0
+
+			.header-logo
+				float: none
+				img
+					width: 75px
+
+			.header-title
+				h4
+					margin-top: 30px
+
+		.signup-form
+			margin: 30px 125px
+
+			.password
+				margin-bottom: 30px
+
+			.checkbox
+				margin-top: 10px
+				margin-bottom: 0
+
+			.col-button
+				padding-left: 7px
+
+			.form-button
+				width: 185px
+
+	.signin
+		padding-top: 26px
